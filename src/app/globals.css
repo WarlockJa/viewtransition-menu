@@ -2,26 +2,34 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+::view-transition-old(subnavcontent) {
+  animation: 500ms subnavcontent-leave both, 500ms fade-out both;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+::view-transition-new(subnavcontent) {
+  animation: 500ms subnavcontent-enter both, 500ms fade-in both;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+@keyframes fade-out {
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes subnavcontent-enter {
+  from {
+    transform: translateX(calc(var(--subnav-direction) * 40px));
+  }
+}
+
+@keyframes subnavcontent-leave {
+  to {
+    transform: translateX(calc(var(--subnav-direction) * -40px));
+  }
 }

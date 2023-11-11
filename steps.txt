@@ -1,0 +1,4 @@
+https://www.frontend.fyi/v/in-page-animations-with-view-transitions
+
+// document.startViewTransition TS support
+npm i --save-dev @types/dom-view-transitions

@@ -1,19 +1,8 @@
-type NavItem = {
-  id: number;
-  title: string;
-  href: string;
-  subnavigation?: { title: string; href: string }[];
-  leftBar?: string;
-  bottomBar?: {
-    title: string;
-    links: { title: string; href: string }[];
-  };
-};
-
-export const nav: NavItem[] = [
+export const nav: INavItem[] = [
   {
     id: 1,
     title: "Products",
+    neighbours: { left: null, right: 80 },
     href: "/products",
     subnavigation: [
       { title: "Payments", href: "/prod1" },
@@ -27,11 +16,11 @@ export const nav: NavItem[] = [
       { title: "Terminal", href: "/prod9" },
       { title: "Financial connections", href: "/prod10" },
     ],
-    // leftBar: "Just some random text so we have different layouts.",
   },
   {
     id: 2,
     title: "Solutions",
+    neighbours: { left: -80, right: 85 },
     href: "/solutions",
     subnavigation: [
       { title: "SaaS", href: "/solution1" },
@@ -52,6 +41,7 @@ export const nav: NavItem[] = [
   {
     id: 3,
     title: "Developers",
+    neighbours: { left: -85, right: 100 },
     href: "/developers",
     subnavigation: [
       { title: "Pre-built checkout", href: "/dev1" },
@@ -75,6 +65,7 @@ export const nav: NavItem[] = [
   {
     id: 4,
     title: "Resources",
+    neighbours: { left: -100, right: 100 },
     href: "/resources",
     subnavigation: [
       { title: "Support Center", href: "/support" },
@@ -88,6 +79,7 @@ export const nav: NavItem[] = [
   {
     id: 5,
     title: "Pricing",
+    neighbours: { left: -100, right: null },
     href: "/pricing",
   },
 ];

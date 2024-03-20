@@ -19,7 +19,7 @@ function Home() {
         </p>
 
         <p className="max-w-[20ch] text-3xl font-bold leading-[1.1] md:text-[100px]">
-          "MEGA menu" animated with Framer-Motion
+          &quot;MEGA menu&quot; animated with Framer-Motion
         </p>
 
         <p className="mt-8">

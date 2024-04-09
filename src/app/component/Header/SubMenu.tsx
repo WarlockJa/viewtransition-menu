@@ -42,6 +42,7 @@ export default function SubMenu({
         <motion.div
           initial={{ opacity: 0, translateX: `${transitionDirection * 100}px` }}
           animate={{ opacity: 1, translateX: `0px` }}
+          transition={{ ease: "easeInOut" }}
           exit={{ opacity: 0 }}
           className="flex"
         >
